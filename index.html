@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Trivia</title>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+
+    <!-- Added link to the jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  
+  
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>??</title>
+  </head>
+
+  <body>
+      <div id="intro">
+        <h1>this is the game</h1>
+      </div>
+      <div class="fancy-container">
+
+          <div id="Q1" class="fancy-list  fancy-left">
+              <h3 id="Qtime"></h3>
+              <h3 id="Qt">Question 1</h3>
+              <label>
+                  <input type="radio" name="A" id="A1"  onclick="buttonA()"/>
+                  <span>1</span><span id="A1t">answer A</span>
+              </label>
+              <label>
+                  <input type="radio" name="A" id="A2" onclick="buttonB()"/>
+                  <span>2</span><span id="A2t">answer B</span>
+              </label>
+              <label>
+                  <input type="radio" name="A" id="A3" onclick="buttonC()"/>
+                  <span>3</span><span id="A3t">answer C</span>
+              </label>
+              <label>
+                  <input type="radio" name="A" id="A4" onclick="buttonD()"/>
+                  <span>4</span><span id="A4t">answer D</span>
+              </label>
+              <label>
+                  <input type="radio" name="A" id="A5" onclick="buttonE()"/>
+                  <span>5</span><span id="A5t">answer E</span>
+              </label>
+        </div>
+    </div>
+    <div id="qReport">
+        <h1 id="qrHeader">You are correct-ish</h1>
+        <h3 id="qrText">-1</h3>
+    </div>
+    <div id="end">
+      <h1>this is the game OVER</h1>
+      <h3 id="winslabel">-1</h3>
+      <button id="reset" onclick="reset()">Reset</button>
+    </div>
+  </body>
+  <script src="assets/javascript/questions.js"></script>
+  <script src="assets/javascript/game.js"></script>
+</html>

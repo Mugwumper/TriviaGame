@@ -1,0 +1,89 @@
+
+    /* Custom Listing Style */
+    .fancy-list{
+      margin: 7px 5px;
+  }
+
+  .fancy-list label{
+      font-family: Open Sans;
+      display: block;
+  }
+
+  /* Fancy Radio Button */
+  .fancy-list input[type="radio"] {
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      border: 1px solid #b1b1b1;
+      background-color: #ffffff;
+      outline: none;
+      cursor: pointer;
+      -webkit-appearance: none;
+      transition: background-color .5s;
+  }
+
+  /* Pseudo Styles */
+  .fancy-list input[type="radio"]:checked {
+      background-color: #75c76a !important;
+  }
+
+  .fancy-list input[type="radio"]:hover {
+      background-color: #66c4f0;
+  }
+
+  .fancy-list input[type="radio"]:active {
+      background-color: #3faee2;
+  }
+
+  .fancy-list input[type="radio"]:checked ~ span:first-of-type {
+      color: #ffffff;
+      transition: color .3s;
+  }
+
+  .fancy-list input[type="radio"]:hover ~ span:first-of-type {
+      color: #ffffff;
+      transition: color .3s;
+  }
+
+  /* List Item Text Checked & Hover Color */
+  .fancy-list input[type="radio"]:checked ~ span:nth-child(3) {
+      color: #363636 !important;
+  }
+
+  .fancy-list input[type="radio"]:hover ~ span:nth-of-type(2) {
+      color: #66c4f0;
+      transition: color .3s;
+  }
+
+  /* Radio Button Numbers */
+  .fancy-list label span:first-of-type {
+      position: relative;
+      left: -27px;
+      font-size: 15px;
+      color: #8b8b8b;
+  }
+
+  /* List Item Texts */
+  .fancy-list label span {
+      position: relative;
+      top: -10px;
+      left: -5px;
+  }
+
+  .fancy-list .two-num span {
+      position: relative;
+      top: -10px;
+      left: -11px;
+  }
+
+  .fancy-container{
+      display: inline-flex;
+  }
+
+  .fancy-left{
+      margin-right: 100px;
+  }
+
+  h3{
+      font-family: Open Sans;
+  }

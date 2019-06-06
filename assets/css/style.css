@@ -1,4 +1,10 @@
 
+#rTime{
+    color: lightgray;
+    text-align: right;
+    margin: 60px;
+}
+
     /* Custom Listing Style */
     .fancy-list{
       margin: 7px 5px;

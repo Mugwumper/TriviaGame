@@ -33,6 +33,10 @@ var countDown = {
         if (time === undefined) {
             countDown.time = timeShowQuestionDefault;
         } else {
+            if (time > 999) {
+                 // this is cheesy, some things call this having a value in ms not seconds.
+                time = time / 1000;
+            }
             countDown.time = time;
         }
         countDown.updateGUI();
@@ -77,8 +81,8 @@ function showPanel(panel) {
     $("#end").hide();
     $("#qReport").hide();
     switch (panel) {
-        case 'intro':
-            $("#intro").show();
+        case 'Q1':
+            $("#Q1").show();
             break;
         case 'end':
             $("#end").show();
@@ -87,7 +91,8 @@ function showPanel(panel) {
             $("#intro").show();
             break;
         case 'qReport':
-            $("#qReport").show();
+            $("#Q1").fadeOut(100);
+            $("#qReport").fadeIn(1500);
             break;
         default:
             $("#end").show();
@@ -97,7 +102,7 @@ function showPanel(panel) {
 }
 
 $("#intro").on("click", function () {
-    $(this).fadeOut(1000, function () {
+    $(this).fadeOut(800, function () {
         $(this).hide();
         $("#Q1").fadeIn(1000);
         loadNext();
@@ -139,10 +144,8 @@ function buttonH() {
 function applyAnswer(userAnswer) {
     console.log("answer applied: " + userAnswer);
     countDown.stop();
-    isAnswered = true;
-    
-
-    setTimeout(countDown.start(timeShowAnswer), 100);
+    isAnswered = true;  
+    setTimeout(countDown.start(currentQ.timeToLearn), 100);
     switch (userAnswer) {
         case currentQ.aKey:
             // show "this is correct"
@@ -161,7 +164,7 @@ function applyAnswer(userAnswer) {
     }
     $("#qrText").text(currentQ.aText);
     showPanel("qReport");
-    setTimeout(loadNext, timeShowAnswer);
+    setTimeout(loadNext, currentQ.timeToLearn * 1000);
 }
 
 function loadNext() {
@@ -181,6 +184,7 @@ function loadQuestion(Qindex) {
     console.log(currentQ);
     $("#Qt").text(currentQ.questionText);
     $("#Q1").fadeIn(1000);
+    $("Qtime").fadeIn(300);
     if (currentQ.at1 !== "") {
         $("#A1t").text(currentQ.at1);
     }
@@ -206,7 +210,7 @@ function loadQuestion(Qindex) {
         $("#A8t").text(currentQ.at8);
     }
     showAnswers(currentQ);
-    setTimeout(countDown.start(), 100);
+    setTimeout(countDown.start(currentQ.timeToAnswer), 100);
 }
 
 function showAnswers(currentQ) {
@@ -282,7 +286,7 @@ function showAnswers(currentQ) {
             $("#A8t").fadeIn(500);
         }
     }
-}
+}  // end of showAnswers
 
 function clearAnswers() {
     $("#Q1").hide();
@@ -314,6 +318,7 @@ function clearAnswers() {
 }
 
 function showGameEnd() {
+    countDown.stop();
     $("#winslabel").text("wins = " + wins);
     showPanel("end");
 }

@@ -1,11 +1,13 @@
 var questions = [];
 
 class Qi {
-    constructor(questionText, aKey, aHeader, aText, at1, at2, at3, at4, at5, at6, at7, at8) {
+    constructor(questionText, aKey, aHeader, aText, timeToAnswer, timeToLearn, at1, at2, at3, at4, at5, at6, at7, at8) {
         this.questionText = questionText;
         this.aKey = aKey;
         this.aHeader = aHeader;
         this.aText = aText;
+        this.timeToAnswer = timeToAnswer;
+        this.timeToLearn = timeToLearn;
         this.at1 = at1;
         this.at2 = at2;
         this.at3 = at3;
@@ -24,6 +26,8 @@ function initItems() { // gets called once per new game
         3,
         "Sting",
         "Sting is an ancient Elvish blade made by weapon-smiths in Gondolin. When Orcs or goblins are within an undetermined radius, the blade glows blue, alerting Bilbo to their presence.",
+        5,
+        7,
         "Gash",
         "Pointy",
         "Sting",
@@ -36,6 +40,8 @@ function initItems() { // gets called once per new game
         2,
         "30",
         "The Hobbits have special days which do not sit in any month - Yule 1 (New Year’s Eve) and Yule 2 (New Year’s Day) and Midsummer Lithe Day. Every fourth year there is an extra Litheday used as we use leap years to sort out the shift in seasons.",
+        5,
+        7,
         "29",
         "30",
         "31"
@@ -47,6 +53,8 @@ function initItems() { // gets called once per new game
         2,
         "False",
         "A Hobbit would be expected to throw a party on the eve of their birthday, providing gifts for those invited. Guests would give gifts to the host as well but they would be delivered in person before that date, never on the day.",
+        8,
+        12,
         "True",
         "False"
     );

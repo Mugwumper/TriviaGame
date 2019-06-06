@@ -18,47 +18,37 @@ class Qi {
 }
 
 function initItems() { // gets called once per new game 
-    createItems();
-}
-
-function createItems() {
     questions.length = 0;
-    var IObj = new Qi(
-        "this is question 1 text?",
-        1,
-        "answer header",
-        "answer text",
-        "A1 (it's this one)", 
-        "A2",
-        "A3",
-        "A4"
-        );
+    var IObj = new Qi( // use the above constructor for a guide to creating questions.
+        "What does Bilbo name his sword?",
+        3,
+        "Sting",
+        "Sting is an ancient Elvish blade made by weapon-smiths in Gondolin. When Orcs or goblins are within an undetermined radius, the blade glows blue, alerting Bilbo to their presence.",
+        "Gash",
+        "Pointy",
+        "Sting",
+        "Goblin Bane"
+    );
     questions.push(IObj);
 
     var IObj = new Qi(
-        "what is2?",
+        "Hobbits have strange calendars How many days are in all the months in a Hobbit Calendar?",
         2,
-        "answer header22",
-        "answer text22",
-        "A122", 
-        "A222 (it's this one)",
-        "A322"
-        );
+        "30",
+        "The Hobbits have special days which do not sit in any month - Yule 1 (New Year’s Eve) and Yule 2 (New Year’s Day) and Midsummer Lithe Day. Every fourth year there is an extra Litheday used as we use leap years to sort out the shift in seasons.",
+        "29",
+        "30",
+        "31"
+    );
     questions.push(IObj);
-
 
     var IObj = new Qi(
-        "what is3?",
+        "Hobbits never give gifts to those celibrating a birthday",
         2,
-        "answer header3",
-        "answer text3",
-        "A3-1", 
-        "A3-2 (it's this one)",
-        "A3-3"
-        );
+        "False",
+        "A Hobbit would be expected to throw a party on the eve of their birthday, providing gifts for those invited. Guests would give gifts to the host as well but they would be delivered in person before that date, never on the day.",
+        "True",
+        "False"
+    );
     questions.push(IObj);
-
 }
-
-
-
